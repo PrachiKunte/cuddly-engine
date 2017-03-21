@@ -1,0 +1,77 @@
+<html>
+<head>
+	<title>Demo Site</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="demo.css">
+	<script src="demosite.js"></script>
+<link rel="stylesheet" type="text/css" href="demo2.css">
+</head>
+<body>
+<div id="header-text">
+<h3>Demo Site</h3>
+</div>
+
+	<div class="topnav" id="myTopnav">
+  		<a href="#home">Home</a>
+  		<a href="#contact">Contact</a>
+  	</div>
+
+	<div class = "contacts">
+		<div id="contact-list">
+			<div class="chip">
+  				<img src="img_avatar.png" alt="Person" width="100" height="100">
+  				<b>Prachi Kunte</b>
+  			<a id="contact-form">Submit Your Query</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- Contact Modal here....  -->
+
+	<div id="c01" class="modal">
+  		<span onclick="document.getElementById('c01').style.display='none'" 
+				class="close" title="Close Modal">&times;</span>
+
+  		<form class="modal-content animate"  onSubmit="alert('Query submitted..!!');" name="loginform" method="get">
+
+    		<div class="container">
+    			<label for="fname">First Name</label>
+    			<input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+    			<label for="lname">Last Name</label>
+    			<input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+    			<label for="country">Country</label>
+    			<select id="country" name="country">
+    				<option value="india">India</option>
+      				<option value="swiss">Switzerland</option>
+      				<option value="usa">USA</option>
+    			</select>
+    			<label for="subject">Query</label>
+    			<textarea id="subject" name="subject" placeholder="Write something.." required></textarea>
+    			<button id="btnmodal" type="submit" onclick="">Submit</button><br>
+    		</div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('c01').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+
+  </form>
+</div>
+
+  <script>
+// Get the login modal
+var modal = document.getElementById('c01');
+var ref = document.getElementById("contact-form");
+ref.onclick = function(){
+  modal.style.display="block";
+}
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+
+</body>
+</html>
